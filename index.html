@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Real-time Music Restoration through Linear Prediction and Generative Spectral Inpainting</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class='section'>
+        <h2 class="italicized_h2">Real-time Music Restoration through Linear Prediction and Generative Spectral Inpainting</h2>
+	<h4>C. Aironi, L. Gabrielli, S. Cornell, S. Squartini (2025)</h4>
+	<br>
+	<p align="justify">This paper presents an advanced Packet Loss Concealment (PLC) method designed to restore audio integrity in scenarios like Networked Music Performance (NMP), where packet loss can severely degrade the listening experience. Our approach integrates the modeling strength of Linear Predictive Coding (LPC) with the generative power of a specialized Generative Adversarial Network (GAN) for spectral inpainting. Specifically, the method uses an LPC model to generate an initial, coarse estimate of the lost audio segment. This estimate is then employed to condition a <em>bin2bin</em> convolutional GAN, which refines the reconstruction in the time-frequency domain by learning to generate high-fidelity magnitude spectrograms.
+	The architecture features a computationally efficient U-Net design, termed <em>bin2bin-v2</em>, with depthwise separable convolutions to significantly reduce the model's parameter count and computational cost while maintaining high modeling capacity. The final output is achieved by combining the GAN's magnitude reconstruction with the phase predicted by the LPC. The system operates in a fully causal setting, capable of real-time execution on standard consumer hardware.
+	The method was developed and evaluated in the context of the <a href="https://internetofsounds2025.ieee-is2.org/workshops/3rd-ieee-international-workshop-networked-immersive-audio/music-packet-loss-concealment">IEEE-IS² Music PLC Challenge</a>, where it achieved the first place, outperforming all competing systems by subjective evaluations.
+	Additionally, when compared to an earlier PLC model, it yielded a 9.68% improvement in the objective PLCMOS metric and a 6.48% increase in DNSMOS, alongside an 8.53% enhancement in the ODG score. Furthermore, a 2.81% reduction in the Fréchet Audio Distance indicates that the reconstructed audio more closely aligns with the statistical properties of real music.</p>
+    </div>
+
+	<div class="image-container">
+	  <img src="img/NMP_transparent.png" alt="NMP framework">
+	</div>
+	
+    <div id='section-1' class='section'>
+	<p align="justify">Below are some examples of repaired music sequences. For the best listening experience, we recommend using headphones.</p>
+		<div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/flute_lossy.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/flute_restored.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+	<hr>
+        <div class='playlist'>
+			<div class='labeled-audio'><p class='text'>corrupted</p>
+                	<audio preload='metadata' controls><source src='samples/guitar_lossy.wav' type='audio/mpeg'></audio>
+            	</div>
+			<div class='labeled-audio'><p class='text'>restored</p>
+                	<audio preload='metadata' controls><source src='samples/guitar_restored.wav' type='audio/mpeg'></audio>
+            	</div>
+        </div>
+	<hr>
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/piano_lossy.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/piano_restored.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+	<hr>
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/synth_lossy.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/synth_restored.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+	<hr>
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/trumpet_lossy.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/trumpet_restored.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+	<hr>
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/violin_lossy.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/violin_restored.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+	<hr>
+        <div class='playlist'>
+		    <div class='labeled-audio'><p class='text'>corrupted</p>
+                <audio preload='metadata' controls><source src='samples/brass_lossy.wav' type='audio/mpeg'></audio>
+            </div>
+		    <div class='labeled-audio'><p class='text'>restored</p>
+                <audio preload='metadata' controls><source src='samples/brass_restored.wav' type='audio/mpeg'></audio>
+            </div>
+        </div>
+	<br>
+	<br>
+	<br>
+		
+	<footer>
+		Author: <a href="mailto:c.aironi@staff.univpm.it">Carlo Aironi</a>
+		<a href="https://github.com/aircarlo/music_plc"><img src="img/gh_ico.png" alt="github" width="35" height="35" style="margin: 0 20px 0 20px;"</a>
+		</p>
+	</footer>	
+	</div>
+</body>
+</html>
